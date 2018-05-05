@@ -1,7 +1,7 @@
 # Bisection Solving
 # Kobe Arthur Scofield
 # 2018-05-04
-# Build 1
+# Build 2
 # Python: Anaconda3_64 5.0.0.0 (Python 3.6.2)
 # IDE: MSVS2017_Community 15.6.7
 
@@ -35,11 +35,14 @@ while True:
                 rzt = m
                 break
             else:
-                if ((selffunc(a)*selffunc(m)) > 0): # Fixed
-                    a = m
+                if (selffunc(m) != 0.0):  # V2 Fix
+                    if ((selffunc(a)*selffunc(m)) > 0): # Fixed
+                        a = m
+                    else:
+                        b = m
+                    k+=1
                 else:
-                    b = m
-                k+=1
+                    rzt = m
     else:
         a = float(input("Input a: "))
         b = float(input("Input b: "))
